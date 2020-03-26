@@ -1,33 +1,35 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
-import Page from './pages/Page'
-import Page2 from './pages/Page2'
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
+import PinkFloyd from './pages/PinkFloyd'
+import LedZeppelin from './pages/LedZeppelin'
+import JimiHendrix from './pages/JimiHendrix'
 
 const App = () => {
   return (
     <Router>
-      <header>
-        <h1>Welcome to my SPA</h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Go Home</Link>
-            </li>
-            <li>
-              <Link to="/1">Page 1</Link>
-            </li>
-            <li>
-              <Link to="/2">Page 2</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/pinkfloyd">Pink Floyd</Link>
+          </li>
+          <li>
+            <Link to="/jimihendrix">Jimi Hendrix</Link>
+          </li>
+          <li>
+            <Link to="/ledZeppelin">Led Zeppelin</Link>
+          </li>
+        </ul>
+      </nav>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/1" component={Page}></Route>
-        <Route exact path="/2" component={Page2}></Route>
+        <Route exact path="/pinkfloyd" component={PinkFloyd}></Route>
+        <Route exact path="/jimihendrix" component={JimiHendrix}></Route>
+        <Route exact path="/ledZeppelin" component={LedZeppelin}></Route>
         <Route path="*" component={NotFound}></Route>
       </Switch>
     </Router>
